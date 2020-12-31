@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 0.0.5
+name: casty-dash
+version: 0.0.5
+description: A helm chart for the Casty dashboard
+home: https://github.com/CastyLab/dashboard
+keywords:
+- casty-dash
+maintainers:
+- name: iamalirezaj
+  url: https://github.com/iamalirezaj
+sources:
+- https://github.com/CastyLab/dashboard
+type: application

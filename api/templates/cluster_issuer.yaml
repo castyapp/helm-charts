@@ -1,0 +1,20 @@
+{{ if .Values.tls.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt
+  namespace: casty-api
+spec:
+  acme:
+    server: {{ .Values.tls.caServer }}
+    email: {{ .Values.tls.email }}
+    privateKeySecretRef:
+      name: letsencrypt
+    solvers:
+    - dns01:
+        cloudflare:
+          email: {{ .Values.tls.cloudflare.email }}
+          apiTokenSecretRef:
+            name: cloudflare-api-token-secret
+            key: api-token
+{{ end }}

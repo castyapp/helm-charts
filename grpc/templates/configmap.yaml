@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: casty-grpc
+  name: grpc-config
+data:
+  spotify_client_secret.json: |
+    {
+      "web": {
+        "client_id": "{{ .Values.oauth.spotify.client_id }}",
+        "client_secret": "{{ .Values.oauth.spotify.client_secret }}",
+        "auth_uri": "https://accounts.spotify.com/authorize",
+        "token_uri": "https://accounts.spotify.com/api/token",
+        "redirect_uri": "{{ .Values.oauth.spotify.redirect_uri }}"
+      }
+    }
+  google_client_secret.json: |
+    {
+      "web": {
+        "client_id": "{{ .Values.oauth.google.client_id }}",
+        "project_id": "{{ .Values.oauth.google.project_id }}",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "{{ .Values.oauth.google.client_secret }}",
+        "redirect_uris": [
+          "{{ .Values.oauth.google.redirect_uri }}"
+        ]
+      }
+    }
+  discord_client_secret.json: |
+    {
+      "web": {
+        "client_id": "{{ .Values.oauth.discord.client_id }}",
+        "client_secret": "{{ .Values.oauth.discord.client_secret }}",
+        "auth_uri": "https://discordapp.com/api/oauth2/authorize",
+        "token_uri": "https://discordapp.com/api/oauth2/token",
+        "redirect_uri": "{{ .Values.oauth.discord.redirect_uri }}"
+      }
+    }
+  config.yaml: |-
+    {{- toYaml .Values.appConfig | nindent 12 }}

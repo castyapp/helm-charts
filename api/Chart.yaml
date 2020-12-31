@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 1.4.1
+name: casty-api
+version: 0.0.6
+description: A helm chart for the Casty api server
+home: https://github.com/CastyLab/api.service
+keywords:
+- casty-api
+maintainers:
+- name: iamalirezaj
+  url: https://github.com/iamalirezaj
+sources:
+- https://github.com/CastyLab/api.service
+type: application

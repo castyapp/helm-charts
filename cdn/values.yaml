@@ -1,0 +1,40 @@
+replicaCount: 1
+
+ingressController: nginx
+
+service:
+  type: ClusterIP
+  port: 5555
+
+domainName: cdn.casty.local
+
+image:
+  repository: castylab/cdn
+  pullPolicy: Always
+  tag: alpine
+
+tls:
+  enabled: false
+  email: 
+  caServer: https://acme-v02.api.letsencrypt.org/directory
+  cloudflare: 
+    email: 
+    token: 
+  dnsNames:
+    - cdn.casty.local
+
+resources: {}
+
+configDirectory: /config
+appConfig:
+  app:
+    version: "0.1-dev"
+    debug: true
+    env: "dev"
+  secrets:
+    object_storage:
+      endpoint: ""
+      region: ""
+      access_key: ""
+      secret_key: ""
+    sentry_dsn: ""

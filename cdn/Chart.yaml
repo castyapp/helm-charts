@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 0.0.2
+name: casty-cdn
+version: 0.0.2
+description: A helm chart for the Casty CDN server
+home: https://github.com/CastyLab/cdn.service
+keywords:
+- casty-cdn
+maintainers:
+- name: iamalirezaj
+  url: https://github.com/iamalirezaj
+sources:
+- https://github.com/CastyLab/cdn.service
+type: application

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: casty-grpc
+  name: grpc
+  labels:
+    app: grpc
+spec:
+  selector:
+    matchLabels:
+      app: grpc
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: grpc
+    spec:
+      containers:
+      - name: grpc
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        args: [
+          "--port",
+          "55283",
+          "--config-file",
+          "{{ .Values.configDirectory }}/config.yaml",
+        ]
+        ports:
+        - containerPort: 55283
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+          - name: config-volume
+            mountPath: {{ .Values.configDirectory }}
+      volumes:
+      - name: config-volume
+        configMap:
+          name: grpc-config

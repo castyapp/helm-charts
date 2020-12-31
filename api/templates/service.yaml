@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: casty-api
+  name: api-service
+  labels:
+    app: api-service
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: api-service
+  ports:
+    - name: api
+      protocol: TCP
+      port: {{ .Values.service.apiPort }}
+      targetPort: 9002

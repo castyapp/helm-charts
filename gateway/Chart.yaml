@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 1.5.9
+name: casty-gateway
+version: 0.1.7
+description: A helm chart for the Casty gateway server
+home: https://github.com/CastyLab/gateway.service
+keywords:
+- casty-gateway
+maintainers:
+- name: iamalirezaj
+  url: https://github.com/iamalirezaj
+sources:
+- https://github.com/CastyLab/gateway.service
+type: application

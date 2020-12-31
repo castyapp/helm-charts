@@ -1,0 +1,27 @@
+replicaCount: 3
+
+ingressController: nginx
+domainName: casty.local
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+image:
+  repository: castylab/dashboard
+  pullPolicy: Always 
+  tag: alpine
+
+tls:
+  enabled: false
+  email: 
+  caServer: https://acme-v02.api.letsencrypt.org/directory
+  cloudflare: 
+    email: 
+    token: 
+  dnsNames:
+    - casty.local
+    - www.casty.local
+
+resources: {}

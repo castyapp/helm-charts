@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: casty-api
+  name: casty-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingressController }}
+spec:
+  {{ if .Values.tls.enabled }}
+  tls:
+  - hosts:
+      {{- toYaml .Values.tls.dnsNames | nindent 12 }}
+    secretName: casty-api-lets-encrypt-tls
+  {{ end }}
+  rules:
+    - host: {{ .Values.domainName }}
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: api-service
+            servicePort: 9002

@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: casty-cdn
+  name: cdn-deploy
+  labels:
+    app: cdn-service
+spec:
+  selector:
+    matchLabels:
+      app: cdn-service
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: cdn-service
+    spec:
+      containers:
+      - name: cdn
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        args: [
+          "--port",
+          "5555",
+          "--config-file",
+          "{{ .Values.configDirectory }}/config.yaml",
+        ]
+        ports:
+        - containerPort: 5555
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - name: config-volume
+          mountPath: "{{ .Values.configDirectory }}/config.yaml"
+          subPath: "config.yaml"
+          readOnly: false
+      volumes:
+      - name: config-volume
+        configMap:
+          name: cdn-config

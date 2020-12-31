@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  namespace: casty-dash
+  name: casty-dash-ingress
+  labels:
+    app: dash
+  annotations:
+    kubernetes.io/ingress.class: {{ .Values.ingressController }}
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  {{ if .Values.tls.enabled }}
+  tls:
+  - hosts:
+      {{- toYaml .Values.tls.dnsNames | nindent 12 }}
+    secretName: casty-dashboard-lets-encrypt-tls
+  {{ end }}
+  rules:
+    - host: {{ .Values.domainName }}
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: dash-service
+            servicePort: 80

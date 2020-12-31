@@ -1,0 +1,17 @@
+{{ if .Values.tls.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  namespace: casty-dash
+  name: casty-dashboard-lets-encrypt
+  labels:
+    app: dash
+spec:
+  secretName: casty-dashboard-lets-encrypt-tls
+  issuerRef:
+    name: letsencrypt
+  dnsNames:
+    {{- toYaml .Values.tls.dnsNames | nindent 12 }}
+  privateKey:
+    rotationPolicy: Always
+{{ end }}

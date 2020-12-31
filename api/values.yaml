@@ -1,0 +1,47 @@
+replicaCount: 3
+
+ingressController: nginx
+
+service:
+  type: ClusterIP
+  apiPort: 9002
+  cdnPort: 4000
+
+domainName: api.casty.local
+
+image:
+  repository: castylab/api
+  pullPolicy: Always
+  tag: alpine
+
+tls:
+  enabled: false
+  email: 
+  caServer: https://acme-v02.api.letsencrypt.org/directory
+  cloudflare: 
+    email: 
+    token: 
+  dnsNames:
+    - api.casty.local
+
+resources: {}
+
+configDirectory: /config
+appConfig:
+  app:
+    version: "1.4.1"
+    debug: true
+    env: dev
+  grpc:
+    host: localhost
+    port: 55283
+  http:
+    access_control_allow_origin: "*"
+  secrets:
+    object_storage:
+      endpoint: ""
+      region: ""
+      access_key: ""
+      secret_key: ""
+    sentry_dsn: 
+    hcaptcha_secret: 

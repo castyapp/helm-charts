@@ -1,0 +1,69 @@
+replicaCount: 3
+
+service:
+  type: ClusterIP
+  port: 55283
+
+image:
+  repository: castylab/grpc
+  pullPolicy: Always
+  tag: alpine
+
+resources: {}
+
+configDirectory: /config
+
+monitoring:
+  enabled: false
+
+appConfig:
+  app:
+    version: "1.4.7"
+    debug: true
+    env: dev
+  secrets:
+    db:
+      name: "casty"
+      host: "localhost"
+      port: 27017
+      user: "root"
+      pass: ""
+    redis:
+      replicaset: false
+      masterName: mymaster
+      sentinels:
+      - "localhost:5000"
+      pass: a-very-complex-password-here
+      sentinel_pass: a-very-complex-password-here
+    oauth:
+      google: "/config/google_client_secret.json"
+      spotify: "/config/spotify_client_secret.json"
+      discord: "/config/discord_client_secret.json"
+    jwt:
+      expire_time: 60
+      refresh_token_valid_time: 7
+      access_token_secret: 
+      refresh_token_secret: 
+    object_storage:
+      endpoint: ""
+      region: ""
+      access_key: ""
+      secret_key: ""
+    sentry_dsn: 
+    hcaptcha_secret: 
+
+oauth:
+  spotify:
+    client_id: 
+    client_secret: 
+    redirect_uri: 
+  google:
+    client_id: 
+    client_secret: 
+    project_id: 
+    redirect_uri: 
+  discord:
+    client_id: 
+    client_secret: 
+    redirect_uri: 
+    

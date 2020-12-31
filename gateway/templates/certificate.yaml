@@ -1,0 +1,17 @@
+{{ if .Values.tls.enabled }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  namespace: casty-gateway
+  name: casty-gateway-lets-encrypt
+  labels:
+    app: gateway
+spec:
+  secretName: casty-gateway-lets-encrypt-tls
+  issuerRef:
+    name: letsencrypt
+  dnsNames:
+    {{- toYaml .Values.tls.dnsNames | nindent 12 }}
+  privateKey:
+    rotationPolicy: Always
+{{ end }}

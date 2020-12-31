@@ -1,0 +1,50 @@
+replicaCount: 3
+
+ingressController: nginx
+
+service:
+  type: ClusterIP
+  ports:
+    userGateway: 3001
+    theaterGateway: 3002
+
+userGatewayDomain: user-geateway.casty.ir
+theaterGatewayDomain: theater-geateway.casty.ir
+
+tls:
+  enabled: false
+  email: 
+  caServer: https://acme-v02.api.letsencrypt.org/directory
+  cloudflare: 
+    email: 
+    token: 
+  dnsNames:
+    - user-gateway.casty.local
+    - theater-gateway.casty.local
+
+image:
+  repository: castylab/gateway
+  pullPolicy: Always
+  tag: alpine
+
+resources: {}
+
+configDirectory: /config
+appConfig:
+  app:
+    version: 1.6.1
+    debug: true
+    env: dev
+  grpc:
+    host: localhost
+    port: 55283
+  secrets:
+    redis:
+      replicaset: false
+      masterName: mymaster
+      sentinels:
+      - sentinel.redis.svc.cluster.local:5000
+      pass: a-very-complex-password-here
+      sentinel_pass: a-very-complex-password-here
+    sentry_dsn: 
+    
