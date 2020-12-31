@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.4.1
+description: A helm chart for the Casty api server
+home: https://github.com/CastyLab/api.service
+keywords:
+- - casty-api
+maintainers:
+- - name: iamalirezaj
+  url: https://github.com/iamalirezaj
+name: casty-api
+sources:
+- - https://github.com/CastyLab/api.service
+type: application
+version: 0.0.6
+
+...
+files:
+  casty-api-0.0.6.tgz: sha256:01e48a1e65672c9e1ac81b1534e6648f5e98e8ec851dd49da09d2aad51f925a6
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJf7X6ICRCSV9EW91uBZwAApEIMAAiybSDf5SRf1VPPJRTDOUs8
+1lHox3+Tur/p30gzuuyJj/2CDns/haXgcsg+nJYmEHViSenpxGvl6rSMStAGUDNg
+BST/yiB5OTawRfZoEeF/g7dRmTRyZx3c3rxvZ60YOtV3b0/dYhgPPHvM2OREUv4m
+UD2JquQKkbeAsBUzn2cONiswpMvIQhKVKyjZnIakxwPRbrmbPMOjR+R+4IhQHJnQ
+7/3EsVcBN40pqxcpAotph7INJ2e+XOmhny5O/4XmSYd/QewxLAIa19p167vCjjJ/
+y+gxtc8l186tHZhtOnmWlbQu0W9RbrskarLaUFOPcgwQcf2o905m7lSiuANR3h7b
+ZY0+av7krkD4rkPARHjZRUz25M4wruEs7ySccTCPkNL7JmYpLUX1kd65HxpeZ1YW
+5/TuUvD4sVzs8ZG5B8c6OhQJNfsHt9fQwImgRNkgpvMn+wOZKldww/5JEFMJm7lQ
+cP57NG3j9I26x03vDMHenw6veTaSlAcq+zmn8GiHRw==
+=eKbX
+-----END PGP SIGNATURE-----

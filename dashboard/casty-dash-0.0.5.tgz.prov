@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 0.0.5
+description: A helm chart for the Casty dashboard
+home: https://github.com/CastyLab/dashboard
+keywords:
+- - casty-dash
+maintainers:
+- - name: iamalirezaj
+  url: https://github.com/iamalirezaj
+name: casty-dash
+sources:
+- - https://github.com/CastyLab/dashboard
+type: application
+version: 0.0.5
+
+...
+files:
+  casty-dash-0.0.5.tgz: sha256:bedfd9243dddd8289bb75fc8151c26185acb159b1969a112d1c7f9e504c692d5
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJf7X7ECRCSV9EW91uBZwAAJ9cMACW8W7O6T8eUzEyMqjkA5wzH
+6I0FBC+xqjyCcWRuYUgLwlaWVYI0UNUyIjnh0Sv4NJLuZJKIsfA8+QZnx20SWZkS
+yO4Xxy/9gJp3aij3dnAoN8TXbIKsgI30MXmwozCrT/5kxuz49TP90rqD4UUYlVmo
+9daEDhPtN/+J5rKXMzCy0My1N/KEjuYKEJTe+I5+caxHYITCiYUAU0MGbpEwBrlZ
+1GdiDrnmvta+UuqyW3JfNYG/aeqTTfeJw/AXBSd250wNgUEgCrPm5m8ezhdpb+UT
+cUP9YJEzhCMG8ebZlgZOjX3rQICg/2e+1kD6d5L9YWOD0pWPzXUYRyxw9lzxZOXI
+yIHvtvOeXE23R+N2n1pBy6Ctri3Rx/IfY6piWa3lJ7YEGQ49n8Ro7B4bq77WYp/X
+HZaI8zcHEN8DxLjMkYtptMEA/gMw6sogKxS9nGR7seuzfRgDQz67P7PxqIXBuMaO
+AOoH2hU8LezgdgBlqt3WgqTkZa8mAlnIsZVMbNAwpA==
+=46dx
+-----END PGP SIGNATURE-----

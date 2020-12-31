@@ -1,4 +1,98 @@
-repositoryID: 
-owners:
-  - name: MrJosh
-    email: josheghani.dev@gmail.com
+apiVersion: v1
+entries:
+  casty-api:
+  - apiVersion: v2
+    appVersion: 1.4.1
+    created: "2020-12-31T11:06:29.707509+03:30"
+    description: A helm chart for the Casty api server
+    digest: 01e48a1e65672c9e1ac81b1534e6648f5e98e8ec851dd49da09d2aad51f925a6
+    home: https://github.com/CastyLab/api.service
+    keywords:
+    - casty-api
+    maintainers:
+    - name: iamalirezaj
+      url: https://github.com/iamalirezaj
+    name: casty-api
+    sources:
+    - https://github.com/CastyLab/api.service
+    type: application
+    urls:
+    - api/casty-api-0.0.6.tgz
+    version: 0.0.6
+  casty-cdn:
+  - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2020-12-31T11:06:29.708135+03:30"
+    description: A helm chart for the Casty CDN server
+    digest: adde73941086eb157dac9da6a2c52789b4752b799cd0db28321c2c88778a42e7
+    home: https://github.com/CastyLab/cdn.service
+    keywords:
+    - casty-cdn
+    maintainers:
+    - name: iamalirezaj
+      url: https://github.com/iamalirezaj
+    name: casty-cdn
+    sources:
+    - https://github.com/CastyLab/cdn.service
+    type: application
+    urls:
+    - cdn/casty-cdn-0.0.2.tgz
+    version: 0.0.2
+  casty-dash:
+  - apiVersion: v2
+    appVersion: 0.0.5
+    created: "2020-12-31T11:06:29.708578+03:30"
+    description: A helm chart for the Casty dashboard
+    digest: bedfd9243dddd8289bb75fc8151c26185acb159b1969a112d1c7f9e504c692d5
+    home: https://github.com/CastyLab/dashboard
+    keywords:
+    - casty-dash
+    maintainers:
+    - name: iamalirezaj
+      url: https://github.com/iamalirezaj
+    name: casty-dash
+    sources:
+    - https://github.com/CastyLab/dashboard
+    type: application
+    urls:
+    - dashboard/casty-dash-0.0.5.tgz
+    version: 0.0.5
+  casty-gateway:
+  - apiVersion: v2
+    appVersion: 1.5.9
+    created: "2020-12-31T11:06:29.709221+03:30"
+    description: A helm chart for the Casty gateway server
+    digest: 65728830b4a7a82d4a8490b061ede4c2e67dbcf6a53b0c8354326ee3ff216c0c
+    home: https://github.com/CastyLab/gateway.service
+    keywords:
+    - casty-gateway
+    maintainers:
+    - name: iamalirezaj
+      url: https://github.com/iamalirezaj
+    name: casty-gateway
+    sources:
+    - https://github.com/CastyLab/gateway.service
+    type: application
+    urls:
+    - gateway/casty-gateway-0.1.7.tgz
+    version: 0.1.7
+  casty-grpc:
+  - apiVersion: v2
+    appVersion: 1.4.7
+    created: "2020-12-31T11:06:29.710044+03:30"
+    description: A helm chart for the Casty gRPC server
+    digest: 656194ef49e1c810bc9d61eb07134357ffbc462fac84a501f86d5eada9ae5ef4
+    home: https://github.com/CastyLab/grpc.service
+    keywords:
+    - casty-grpc
+    maintainers:
+    - name: iamalirezaj
+      url: https://github.com/iamalirezaj
+    name: casty-grpc
+    sources:
+    - https://github.com/CastyLab/grpc.service
+    type: application
+    urls:
+    - grpc/casty-grpc-0.1.1.tgz
+    version: 0.1.1
+generated: "2020-12-31T11:06:29.704838+03:30"

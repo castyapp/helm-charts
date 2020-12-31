@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 1.4.7
+description: A helm chart for the Casty gRPC server
+home: https://github.com/CastyLab/grpc.service
+keywords:
+- - casty-grpc
+maintainers:
+- - name: iamalirezaj
+  url: https://github.com/iamalirezaj
+name: casty-grpc
+sources:
+- - https://github.com/CastyLab/grpc.service
+type: application
+version: 0.1.1
+
+...
+files:
+  casty-grpc-0.1.1.tgz: sha256:656194ef49e1c810bc9d61eb07134357ffbc462fac84a501f86d5eada9ae5ef4
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJf7X6kCRCSV9EW91uBZwAAPGoMAEdEl/zRPW0nORJy3D4osmtq
+/P+q+8GBmD8GWNWYheMBCYaXwevLU7G4C65DVZBKPkd/GynSsVrozu23PKvXDORG
+Lwg9s01OdqzHDy6FJAbZRNGOBqdXDfAk2e10NpE9++xwuvxc99+TPtIIASGgXU/x
+4wLFleHS3Ldka36YpIkcolmQBC3+EOCkWEZyMlTH4sU+XJjfA5MhTgpzsyntDJTZ
+HuGir+C3cqv9736lRRd/DXLW2j7X/QDR8MQni+msYEPqhVkfrMhQ8kl5ZGV0HZB7
+WiNxoWB1+aDh6euQ1QTcRJCi0YAuPYbmpTR34YyOdJbZOeud4EyxkyuX8uATmjYW
+cKH/DM/LtjWLgxtcvcuRmAb5dp/MNMD2BhjLVA+vxReG0iQO6FK9eNkUPGGp5kFR
+4dYozD0gfnjdyJ8/LQY4vxD6/nI8f6gL8mgMEdNrEI0uC6IlTKN98mEQHySOyYHe
+Vm5MnekzI0kK/Ga52h8G1Slg4SIJ7UVprvtEO0qVrg==
+=t395
+-----END PGP SIGNATURE-----

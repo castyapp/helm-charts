@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 0.0.2
+description: A helm chart for the Casty CDN server
+home: https://github.com/CastyLab/cdn.service
+keywords:
+- - casty-cdn
+maintainers:
+- - name: iamalirezaj
+  url: https://github.com/iamalirezaj
+name: casty-cdn
+sources:
+- - https://github.com/CastyLab/cdn.service
+type: application
+version: 0.0.2
+
+...
+files:
+  casty-cdn-0.0.2.tgz: sha256:adde73941086eb157dac9da6a2c52789b4752b799cd0db28321c2c88778a42e7
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJf7X7zCRCSV9EW91uBZwAAyI0MABNk95sD6HRBs+ttC7APHezN
+vnujRfoCqg2ILHwIqWvqk5lH7RK5ptqauKN9obRPgqBnOcb2BoD30acH05cLhCaJ
+j0ssr27/KYtu50GNd8UEsJO/DL8IL9lRfBSxYOP4jfkSAt5J4ERG5gLxFLQKvrGD
+SpKiLfUY3xMfm2mata/krlZAHoKiXfEY+Z/6BFq/Ls+gFn+6xCdAWa2g1UgC1RLI
+QKmYo+PbBpo60keuTHOW6XPrdzq+cLRYgdGZpACrnyxtXAZMjTlmxp7j5GknHgxz
+NMwgjq3gACrFGQ3vZX3tXf5hwFHsulB94heWRuv8jItFnkdvwloaJH0uR5yHA5/n
+ORVcAXlOAbSG+e43oD5cj1rUd8fE4B5G2qvLrssqeHm1Pisd2iZy4sScpLgIa2B8
+kw1WUaRldqGXr9ef9YM1ttcI+7k8QAXggCKAKHbGyu6Nee4Ke023cSNHGLje/52e
+T04THnhVYRVuWIHHsleC731TvfZUWZAa/aN/VSAqlA==
+=chs2
+-----END PGP SIGNATURE-----
