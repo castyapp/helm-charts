@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 0.0.1
+description: A helm chart for the Casty gateway server
+home: https://github.com/CastyLab/gateway.service
+keywords:
+- - casty-gateway
+maintainers:
+- - name: iamalirezaj
+  url: https://github.com/iamalirezaj
+name: casty-gateway
+sources:
+- - https://github.com/CastyLab/gateway.service
+type: application
+version: 0.0.1
+
+...
+files:
+  casty-gateway-0.0.1.tgz: sha256:404892c35d1c7f8c87aade22eb59ae73b39c113c26b393741687dc3192e932b2
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJgGGd5CRCSV9EW91uBZwAArqAMAJjNv6o4qaGKJt/mYsfgly2Z
+FkAwM98Cd78Rrfpb+fEo8L/k9XI51xqZNhmGtfLwsCZwLBXkzfdWdHzW/Ogb1vKO
+G/IpM3w1mktzC86EBkFHKPbmb16w5KaW2cPKD3HOhdH0r9YyQlp/qyFvh60QkJZF
+oWQNQVuXfft9tSg9gpX8Ze+dNqZbJZ9gnfZHvG2KO+c8IY1OeIFowz9kFo7Hxf5U
+I0VlFmBgtAVERX+vwep7JZSeoI4nQANLq0IPR3aUUjQDx5wz9KMyP3wo9CsxHECp
+sc7b1w/2tijKt7ssJJaqRqvFllEABxe6O9XURyN6j2aWdUvZvKjpNjRRQUr92XV4
+QDjjrYytnAfaf98t1IAWrxBOmO6yrSecQzs7ppmQfwCNx20AcuRgglYB4mQdSiaM
+0KwOf7CXul0psLmlItOyyHEGZu6Pr4z8X+lE35/P34ygd21L6pDQ2e54kgvUmpYJ
+C+8VsI7ywUnSuEC1qQekDPr4UhwdZxmgifXeUwhVpw==
+=p27N
+-----END PGP SIGNATURE-----

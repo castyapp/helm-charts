@@ -1,7 +1,7 @@
 apiVersion: v2
-appVersion: 1.5.9
+appVersion: 0.0.1
 name: casty-gateway
-version: 0.1.7
+version: 0.0.1
 description: A helm chart for the Casty gateway server
 home: https://github.com/CastyLab/gateway.service
 keywords:
