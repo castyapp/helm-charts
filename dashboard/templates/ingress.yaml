@@ -21,5 +21,7 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: dash-service
-            servicePort: 80
+            service:
+              name: dash-service
+              port: 
+                number: 80

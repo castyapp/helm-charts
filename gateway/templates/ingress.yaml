@@ -21,12 +21,16 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: gateway-service
-            servicePort: {{ .Values.service.ports.userGateway }}
+            service:
+              name: gateway-service
+              port: 
+                number: {{ .Values.service.ports.userGateway }}
     - host: {{ .Values.theaterGatewayDomain }}
       http:
         paths:
         - path: /
           backend:
-            serviceName: gateway-service
-            servicePort: {{ .Values.service.ports.theaterGateway }}
+            service:
+              name: gateway-service
+              port: 
+                number: {{ .Values.service.ports.theaterGateway }}

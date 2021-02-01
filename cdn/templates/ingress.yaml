@@ -18,5 +18,7 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: cdn-service
-            servicePort: 5555
+            service:
+              name: cdn-service
+              port: 
+                number: 5555
