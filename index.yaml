@@ -2,10 +2,10 @@ apiVersion: v1
 entries:
   casty-api:
   - apiVersion: v2
-    appVersion: 1.4.1
-    created: "2020-12-31T11:06:29.707509+03:30"
+    appVersion: 0.0.1
+    created: "2021-02-02T00:12:09.103014+03:30"
     description: A helm chart for the Casty api server
-    digest: 01e48a1e65672c9e1ac81b1534e6648f5e98e8ec851dd49da09d2aad51f925a6
+    digest: 56e84317e97dd610c7f4abe52ce11a943f87a90c25650a5e5278aea8823d31e1
     home: https://github.com/CastyLab/api.service
     keywords:
     - casty-api
@@ -17,14 +17,14 @@ entries:
     - https://github.com/CastyLab/api.service
     type: application
     urls:
-    - api/casty-api-0.0.6.tgz
-    version: 0.0.6
+    - api/casty-api-0.0.1.tgz
+    version: 0.0.1
   casty-cdn:
   - apiVersion: v2
-    appVersion: 0.0.2
-    created: "2020-12-31T11:06:29.708135+03:30"
+    appVersion: 0.0.1
+    created: "2021-02-02T00:12:09.103474+03:30"
     description: A helm chart for the Casty CDN server
-    digest: adde73941086eb157dac9da6a2c52789b4752b799cd0db28321c2c88778a42e7
+    digest: df45572a65d05453f487cb4917563f1367f196a9e6f65700175c339d68e90b74
     home: https://github.com/CastyLab/cdn.service
     keywords:
     - casty-cdn
@@ -36,14 +36,14 @@ entries:
     - https://github.com/CastyLab/cdn.service
     type: application
     urls:
-    - cdn/casty-cdn-0.0.2.tgz
-    version: 0.0.2
+    - cdn/casty-cdn-0.0.1.tgz
+    version: 0.0.1
   casty-dash:
   - apiVersion: v2
-    appVersion: 0.0.5
-    created: "2020-12-31T11:06:29.708578+03:30"
+    appVersion: 0.0.1
+    created: "2021-02-02T00:12:09.103918+03:30"
     description: A helm chart for the Casty dashboard
-    digest: bedfd9243dddd8289bb75fc8151c26185acb159b1969a112d1c7f9e504c692d5
+    digest: fee41872d37870807d07369cf4cf9d839a7779f988c93b71517933fe7d248707
     home: https://github.com/CastyLab/dashboard
     keywords:
     - casty-dash
@@ -55,14 +55,14 @@ entries:
     - https://github.com/CastyLab/dashboard
     type: application
     urls:
-    - dashboard/casty-dash-0.0.5.tgz
-    version: 0.0.5
+    - dashboard/casty-dash-0.0.1.tgz
+    version: 0.0.1
   casty-gateway:
   - apiVersion: v2
-    appVersion: 1.5.9
-    created: "2020-12-31T11:06:29.709221+03:30"
+    appVersion: 0.0.1
+    created: "2021-02-02T00:12:09.104477+03:30"
     description: A helm chart for the Casty gateway server
-    digest: 65728830b4a7a82d4a8490b061ede4c2e67dbcf6a53b0c8354326ee3ff216c0c
+    digest: 404892c35d1c7f8c87aade22eb59ae73b39c113c26b393741687dc3192e932b2
     home: https://github.com/CastyLab/gateway.service
     keywords:
     - casty-gateway
@@ -74,14 +74,14 @@ entries:
     - https://github.com/CastyLab/gateway.service
     type: application
     urls:
-    - gateway/casty-gateway-0.1.7.tgz
-    version: 0.1.7
+    - gateway/casty-gateway-0.0.1.tgz
+    version: 0.0.1
   casty-grpc:
   - apiVersion: v2
-    appVersion: 1.4.7
-    created: "2020-12-31T11:06:29.710044+03:30"
+    appVersion: 0.0.1
+    created: "2021-02-02T00:12:09.10501+03:30"
     description: A helm chart for the Casty gRPC server
-    digest: 656194ef49e1c810bc9d61eb07134357ffbc462fac84a501f86d5eada9ae5ef4
+    digest: 22c92515bb2cfc03b1b04ad2a1ad6a7f7fc2dae046d9aeeab011e9ba968d1e9a
     home: https://github.com/CastyLab/grpc.service
     keywords:
     - casty-grpc
@@ -93,6 +93,6 @@ entries:
     - https://github.com/CastyLab/grpc.service
     type: application
     urls:
-    - grpc/casty-grpc-0.1.1.tgz
-    version: 0.1.1
-generated: "2020-12-31T11:06:29.704838+03:30"
+    - grpc/casty-grpc-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-02-02T00:12:09.102299+03:30"

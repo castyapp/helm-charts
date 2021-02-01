@@ -1,7 +1,7 @@
 apiVersion: v2
-appVersion: 1.4.1
+appVersion: 0.0.1
 name: casty-api
-version: 0.0.6
+version: 0.0.1
 description: A helm chart for the Casty api server
 home: https://github.com/CastyLab/api.service
 keywords:
