@@ -3,9 +3,9 @@ entries:
   casty-api:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-02T00:12:09.103014+03:30"
+    created: "2021-02-02T00:36:11.548858+03:30"
     description: A helm chart for the Casty api server
-    digest: 56e84317e97dd610c7f4abe52ce11a943f87a90c25650a5e5278aea8823d31e1
+    digest: 8f7e3f0a7163c54c43bc5c976d7155f076f873070c8eaaf78e74b662bf75668b
     home: https://github.com/CastyLab/api.service
     keywords:
     - casty-api
@@ -22,9 +22,9 @@ entries:
   casty-cdn:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-02T00:12:09.103474+03:30"
+    created: "2021-02-02T00:36:11.549469+03:30"
     description: A helm chart for the Casty CDN server
-    digest: df45572a65d05453f487cb4917563f1367f196a9e6f65700175c339d68e90b74
+    digest: b66cb871913e6881ce4918a5e120fff828cbf49465ec1e8293d3033c85ac3be6
     home: https://github.com/CastyLab/cdn.service
     keywords:
     - casty-cdn
@@ -41,9 +41,9 @@ entries:
   casty-dash:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-02T00:12:09.103918+03:30"
+    created: "2021-02-02T00:36:11.549974+03:30"
     description: A helm chart for the Casty dashboard
-    digest: fee41872d37870807d07369cf4cf9d839a7779f988c93b71517933fe7d248707
+    digest: 675ca83545954ad80fd00a44354bc59fdc1a869b51af80e35b4626ada7a1cf4f
     home: https://github.com/CastyLab/dashboard
     keywords:
     - casty-dash
@@ -60,9 +60,9 @@ entries:
   casty-gateway:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-02T00:12:09.104477+03:30"
+    created: "2021-02-02T00:36:11.551081+03:30"
     description: A helm chart for the Casty gateway server
-    digest: 404892c35d1c7f8c87aade22eb59ae73b39c113c26b393741687dc3192e932b2
+    digest: ef2a57a357fe2070fd84e16b11a4505a726c1a9f15e66fa3b0ae1ff98cd53bd4
     home: https://github.com/CastyLab/gateway.service
     keywords:
     - casty-gateway
@@ -79,9 +79,9 @@ entries:
   casty-grpc:
   - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-02T00:12:09.10501+03:30"
+    created: "2021-02-02T00:36:11.551854+03:30"
     description: A helm chart for the Casty gRPC server
-    digest: 22c92515bb2cfc03b1b04ad2a1ad6a7f7fc2dae046d9aeeab011e9ba968d1e9a
+    digest: 926acc550e1169acc3ee05a2ba31577fccaa9597dc3dddd0e2eacd40b4d1e2d9
     home: https://github.com/CastyLab/grpc.service
     keywords:
     - casty-grpc
@@ -95,4 +95,4 @@ entries:
     urls:
     - grpc/casty-grpc-0.0.1.tgz
     version: 0.0.1
-generated: "2021-02-02T00:12:09.102299+03:30"
+generated: "2021-02-02T00:36:11.547496+03:30"
