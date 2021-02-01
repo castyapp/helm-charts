@@ -18,5 +18,7 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: api-service
-            servicePort: 9002
+            service:
+              name: api-service
+              port:
+                number: 9002
