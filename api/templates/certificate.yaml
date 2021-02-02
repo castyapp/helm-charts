@@ -5,7 +5,7 @@ metadata:
   namespace: casty-api
   name: casty-api-lets-encrypt
   labels:
-    app: dash
+    app: api
 spec:
   secretName: casty-api-lets-encrypt-tls
   issuerRef:

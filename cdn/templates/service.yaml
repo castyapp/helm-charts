@@ -4,11 +4,11 @@ metadata:
   namespace: casty-cdn
   name: cdn-service
   labels:
-    app: cdn-service
+    app: cdn
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: cdn-service
+    app: cdn
   ports:
     - name: cdn
       protocol: TCP

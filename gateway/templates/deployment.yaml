@@ -5,6 +5,7 @@ metadata:
   name: gateway
   labels:
     app: gateway
+    group: casty
 spec:
   selector:
     matchLabels:
@@ -37,11 +38,15 @@ spec:
         ports:
         - containerPort: 3001
           containerPort: 3002
-        resources:
-          {{- toYaml .Values.resources | nindent 12 }}
+        {{- if .Values.resources }}
+        resources: {{- toYaml .Values.resources | nindent 8 }}
+        {{- end }}
         volumeMounts:
           - name: config-volume
             mountPath: {{ .Values.configDirectory }}
+      {{- if .Values.tolerations }}
+      tolerations: {{- toYaml .Values.tolerations | nindent 8 }}
+      {{- end }}
       terminationGracePeriodSeconds: 60
       volumes:
       - name: config-volume

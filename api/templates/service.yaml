@@ -4,11 +4,11 @@ metadata:
   namespace: casty-api
   name: api-service
   labels:
-    app: api-service
+    app: api
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: api-service
+    app: api
   ports:
     - name: api
       protocol: TCP
