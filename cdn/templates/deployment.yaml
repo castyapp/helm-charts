@@ -4,11 +4,12 @@ metadata:
   namespace: casty-cdn
   name: cdn-deploy
   labels:
-    app: cdn-service
+    app: cdn
+    group: casty
 spec:
   selector:
     matchLabels:
-      app: cdn-service
+      app: cdn
   replicas: {{ .Values.replicaCount }}
   strategy:
     type: RollingUpdate
@@ -18,7 +19,7 @@ spec:
   template:
     metadata:
       labels:
-        app: cdn-service
+        app: cdn
     spec:
       containers:
       - name: cdn
@@ -32,13 +33,17 @@ spec:
         ]
         ports:
         - containerPort: 5555
-        resources:
-          {{- toYaml .Values.resources | nindent 12 }}
+        {{- if .Values.resources }}
+        resources: {{- toYaml .Values.resources | nindent 8 }}
+        {{- end }}
         volumeMounts:
         - name: config-volume
           mountPath: "{{ .Values.configDirectory }}/config.yaml"
           subPath: "config.yaml"
           readOnly: false
+      {{- if .Values.tolerations }}
+      tolerations: {{- toYaml .Values.tolerations | nindent 8 }}
+      {{- end }}
       volumes:
       - name: config-volume
         configMap:

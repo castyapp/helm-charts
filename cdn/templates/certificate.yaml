@@ -5,7 +5,7 @@ metadata:
   namespace: casty-cdn
   name: casty-cdn-lets-encrypt
   labels:
-    app: dash
+    app: cdn
 spec:
   secretName: casty-cdn-lets-encrypt-tls
   issuerRef:
