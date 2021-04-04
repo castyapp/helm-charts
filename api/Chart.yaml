@@ -1,14 +1,14 @@
 apiVersion: v2
-appVersion: 0.0.1
+appVersion: 0.0.2
 name: casty-api
-version: 0.0.1
+version: 0.0.2
 description: A helm chart for the Casty api server
-home: https://github.com/CastyLab/api.service
+home: https://github.com/castyapp/api.server
 keywords:
 - casty-api
 maintainers:
-- name: iamalirezaj
-  url: https://github.com/iamalirezaj
+- name: Alireza Josheghani
+  url: https://github.com/MrJoshLab
 sources:
-- https://github.com/CastyLab/api.service
+- https://github.com/castyapp/api.server
 type: application

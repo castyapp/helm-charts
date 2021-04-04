@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+apiVersion: v2
+appVersion: 0.0.2
+description: A helm chart for the Casty gateway server
+home: https://github.com/castyapp/gateway.service
+keywords:
+- - casty-gateway
+maintainers:
+- - name: Alireza Josheghani
+  url: https://github.com/MrJoshLab
+name: casty-gateway
+sources:
+- - https://github.com/castyapp/gateway.service
+type: application
+version: 0.0.2
+
+...
+files:
+  casty-gateway-0.0.2.tgz: sha256:3d5593e2b7ddcd5fe02b3685d95203ba37b2010fcce5dc882204ecf02f420ad6
+-----BEGIN PGP SIGNATURE-----
+
+wsDcBAEBCgAQBQJgaQPRCRCSV9EW91uBZwAAew8MAAteubjmN20qZVlWZwHofwc7
+D1Nz61VWSfvdW2tkVSqbWZBBk05T33RAYJxCUBntc68q+8zGe4qi9pvucjzcvmjA
+hVpW4oxx1WdpMsOBLwDKI+kbkZpJXYbtDVtXhY3ESnPGcfDJ5Kxy/AFPA1Qfvbbi
+dXDqQz7WN4coPhHlo/3u9xi6ZH+xLJiVuCSw6vrpH2B/FiAwanH/V48rwXfk+5uE
+OAge30kYNfr5YsE8c3mToLeOQwq7OAFg9K0PfmbrWSOJnJ8d9XkLgBjc4tliVrwR
+RwNDtbbAox2+SNE6xVO3rkNHZRzDE8XqTQrATyVvWTD2qG47CVlUhmybLu8GBhSc
+GgnycZcbCyEsZ1WBN8jryfRhFofZ+/46NIxaoJ04NoYbQKvh9QOIoMGbJ0oJip2A
+pfGMentygfDMf+KzK2ou/f1cegmIOjop6PoxmAzcCVhksiaN+hJrMFBs6hbyZ78e
+jkjVzQjbqQtSAbr8GG4g9AUEs1AkF7v+xO7qtVSmWg==
+=bMJL
+-----END PGP SIGNATURE-----

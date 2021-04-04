@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: casty-dash
   name: dash-deploy
   labels:
     app: dash
@@ -26,7 +25,7 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.service.targetPort }}
+        - containerPort: 80
         {{- if .Values.resources }}
         resources: {{- toYaml .Values.resources | nindent 8 }}
         {{- end }}

@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: casty-grpc
   name: grpc
   labels:
     app: grpc
@@ -29,7 +28,7 @@ spec:
           "--port",
           "55283",
           "--config-file",
-          "{{ .Values.configDirectory }}/config.yaml",
+          "/config/config.hcl",
         ]
         ports:
         - containerPort: 55283
@@ -38,7 +37,7 @@ spec:
         {{- end }}
         volumeMounts:
           - name: config-volume
-            mountPath: {{ .Values.configDirectory }}
+            mountPath: /config
       {{- if .Values.tolerations }}
       tolerations: {{- toYaml .Values.tolerations | nindent 8 }}
       {{- end }}

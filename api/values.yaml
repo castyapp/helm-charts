@@ -4,15 +4,14 @@ ingressController: nginx
 
 service:
   type: ClusterIP
-  apiPort: 9002
-  cdnPort: 4000
+  port: 9002
 
 domainName: api.casty.local
 
 image:
-  repository: castylab/api
+  repository: castyapp/api
   pullPolicy: Always
-  tag: alpine
+  tag: latest
 
 tls:
   enabled: false
@@ -25,23 +24,28 @@ tls:
     - api.casty.local
 
 resources: {}
+tolerations: {}
 
-configDirectory: /config
-appConfig:
-  app:
-    version: "1.4.1"
-    debug: true
-    env: dev
+config:
+  debug: true
+  metrics: false
+  env: dev
+  timezone: "America/California"
   grpc:
     host: localhost
     port: 55283
   http:
     access_control_allow_origin: "*"
-  secrets:
-    object_storage:
-      endpoint: ""
-      region: ""
-      access_key: ""
-      secret_key: ""
-    sentry_dsn: 
-    hcaptcha_secret: 
+  s3:
+    endpoint: ""
+    access_key: ""
+    secret_key: ""
+    insecure_skip_verify: false
+    use_https: true
+  sentry:
+    enabled: false
+    dsn: "sentry.dsn.here"
+  recaptcha:
+    enabled: false
+    type: "hcaptcha"
+    secret: "super-secure-captcha-secret-here"

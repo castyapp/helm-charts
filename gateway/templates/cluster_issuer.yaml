@@ -3,7 +3,6 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt
-  namespace: casty-gateway
 spec:
   acme:
     server: {{ .Values.tls.caServer }}

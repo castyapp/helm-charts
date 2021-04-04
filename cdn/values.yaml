@@ -9,9 +9,9 @@ service:
 domainName: cdn.casty.local
 
 image:
-  repository: castylab/cdn
+  repository: castyapp/cdn
   pullPolicy: Always
-  tag: alpine
+  tag: latest
 
 tls:
   enabled: false
@@ -24,17 +24,13 @@ tls:
     - cdn.casty.local
 
 resources: {}
+tolerations: {}
 
-configDirectory: /config
-appConfig:
-  app:
-    version: "0.1-dev"
-    debug: true
-    env: "dev"
-  secrets:
-    object_storage:
-      endpoint: ""
-      region: ""
-      access_key: ""
-      secret_key: ""
-    sentry_dsn: ""
+config:
+  endpoint: ""
+  access_key: ""
+  secret_key: ""
+  region: ""
+  insecure_skip_verify: false
+  use_https: true
+  sentry_dsn: "sentry.dsn.here"

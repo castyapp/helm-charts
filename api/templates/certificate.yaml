@@ -2,7 +2,6 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  namespace: casty-api
   name: casty-api-lets-encrypt
   labels:
     app: api

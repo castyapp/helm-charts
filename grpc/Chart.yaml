@@ -1,14 +1,14 @@
 apiVersion: v2
-appVersion: 0.0.1
+appVersion: 0.0.2
 name: casty-grpc
-version: 0.0.1
+version: 0.0.2
 description: A helm chart for the Casty gRPC server
-home: https://github.com/CastyLab/grpc.service
+home: https://github.com/castyapp/grpc.server
 keywords:
 - casty-grpc
 maintainers:
-- name: iamalirezaj
-  url: https://github.com/iamalirezaj
+- name: Alireza Josheghani
+  url: https://github.com/MrJoshLab
 sources:
-- https://github.com/CastyLab/grpc.service
+- https://github.com/castyapp/grpc.server
 type: application
