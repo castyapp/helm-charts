@@ -1,8 +1,15 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: casty-cdn
   name: cdn-config
 data:
-  config.yaml: |
-    {{- toYaml .Values.appConfig | nindent 12 }}
+  config.hcl: |
+  {{- with .Values.config }}
+    endpoint             = "{{ .s3.endpoint }}"
+    access_key           = "{{ .s3.access_key }}"
+    secret_key           = "{{ .s3.secret_key }}"
+    use_https            = {{ .s3.use_https }}
+    region               = {{ .s3.region }}
+    insecure_skip_verify = {{ .s3.insecure_skip_verify }}
+    sentry_dsn           = "sentry.dsn.here"
+  {{- end }}

@@ -1,42 +1,116 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: casty-grpc
   name: grpc-config
 data:
-  spotify_client_secret.json: |
-    {
-      "web": {
-        "client_id": "{{ .Values.oauth.spotify.client_id }}",
-        "client_secret": "{{ .Values.oauth.spotify.client_secret }}",
-        "auth_uri": "https://accounts.spotify.com/authorize",
-        "token_uri": "https://accounts.spotify.com/api/token",
-        "redirect_uri": "{{ .Values.oauth.spotify.redirect_uri }}"
+  config.hcl: |
+  {{- with .Values.config }}
+
+    # Debug mode
+    debug = {{ .debug }}
+
+    # Application environment
+    env = "{{ .env }}"
+
+    # Timezone
+    timezone = "{{ .timezone }}"
+
+    # Redis configurations
+    redis {
+      # if you wish to use redis cluster, set this value to true
+      # If cluster is true, sentinels is required
+      # If cluster is false, addr is required
+      cluster = {{ .redis.cluster  }}
+      master_name = "{{ .redis.masterName }}"
+      {{- if (default .redis.cluster false) }}
+      sentinels = {{ toJson .redis.sentinels }}
+      sentinel_pass = "{{ .redis.sentinel_pass }}"
+      {{- else }}
+      addr = "{{ .redis.addr }}"
+      {{- end }}
+      pass = "{{ .redis.pass }}"
+    }
+
+    # Database (mongodb) config
+    db {
+      name        = "{{ .db.name }}"
+      host        = "{{ .db.host }}"
+      port        = {{ .db.port }}
+      user        = "{{ .db.user }}"
+      pass        = "{{ .db.pass }}"
+      auth_source = "{{ .db.auth_source }}"
+    }
+
+    # JWT secrets
+    jwt {
+      access_token {
+        # make sure to use a strong secret key
+        secret = "{{ .jwt.access_token.secret }}"
+        # If you wish to change valid duration of a access_token, change this value
+        expires_at {
+          type  = "{{ .jwt.access_token.expires_at.type }}" # can be [seconds|minutes|hours|days|weeks]
+          value = {{ .jwt.access_token.expires_at.value }}
+        }
+      }
+      refresh_token {
+        # make sure to use a strong secret key
+        secret = "{{ .jwt.refresh_token.secret }}"
+        # If you wish to change valid duration of a refresh_token, change this value
+        expires_at {
+          type  = "{{ .jwt.refresh_token.expires_at.type }}" # can be [seconds|minutes|hours|days|weeks]
+          value = {{ .jwt.refresh_token.expires_at.value }}
+        }
       }
     }
-  google_client_secret.json: |
-    {
-      "web": {
-        "client_id": "{{ .Values.oauth.google.client_id }}",
-        "project_id": "{{ .Values.oauth.google.project_id }}",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_secret": "{{ .Values.oauth.google.client_secret }}",
-        "redirect_uris": [
-          "{{ .Values.oauth.google.redirect_uri }}"
-        ]
+
+    # oauth details
+    oauth {
+
+      # Let user to register with oauth
+      registration_by_oauth = {{ .oauth.registration_by_oauth }}
+
+      # Google config
+      google {
+        enabled       = {{ .oauth.google.enabled }}
+        client_id     = "{{ .oauth.google.client_id }}"
+        client_secret = "{{ .oauth.google.client_secret }}"
+        auth_uri      = "https://accounts.google.com/o/oauth2/auth"
+        token_uri     = "https://oauth2.googleapis.com/token"
+        redirect_uri = "https://casty.ir/oauth/google/callback"
       }
-    }
-  discord_client_secret.json: |
-    {
-      "web": {
-        "client_id": "{{ .Values.oauth.discord.client_id }}",
-        "client_secret": "{{ .Values.oauth.discord.client_secret }}",
-        "auth_uri": "https://discordapp.com/api/oauth2/authorize",
-        "token_uri": "https://discordapp.com/api/oauth2/token",
-        "redirect_uri": "{{ .Values.oauth.discord.redirect_uri }}"
+     
+      # Spotify config
+      spotify {
+        enabled       = {{ .oauth.spotify.enabled }}
+        client_id     = "{{ .oauth.spotify.client_id }}"
+        client_secret = "{{ .oauth.spotify.client_secret }}"
+        auth_uri      = "https://accounts.spotify.com/authorize"
+        token_uri     = "https://accounts.spotify.com/api/token"
+        redirect_uri  = "https://casty.ir/oauth/spotify/callback"
       }
+
     }
-  config.yaml: |-
-    {{- toYaml .Values.appConfig | nindent 12 }}
+
+    # S3 bucket config
+    s3 {
+      endpoint             = "{{ .s3.endpoint }}"
+      access_key           = "{{ .s3.access_key }}"
+      secret_key           = "{{ .s3.secret_key }}"
+      use_https            = {{ .s3.use_https }}
+      insecure_skip_verify = {{ .s3.insecure_skip_verify }}
+    }
+
+    # Sentry config
+    sentry {
+      enabled = {{ .sentry.enabled }}
+      dsn     = "{{ .sentry.dsn }}"
+    }
+
+    # Recaptcha config, it can be google or hcaptcha
+    recaptcha {
+      enabled = {{ .recaptcha.enabled }}
+      type    = "{{ .recaptcha.type }}"
+      secret  = "{{ .recaptcha.secret }}"
+    }
+
+  {{- end }}

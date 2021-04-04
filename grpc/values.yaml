@@ -5,65 +5,72 @@ service:
   port: 55283
 
 image:
-  repository: castylab/grpc
+  repository: castyapp/grpc
   pullPolicy: Always
-  tag: alpine
+  tag: latest
 
 resources: {}
+tolerations: {}
 
-configDirectory: /config
+config:
 
-monitoring:
-  enabled: false
+  debug: true
+  env: dev
 
-appConfig:
-  app:
-    version: "1.4.7"
-    debug: true
-    env: dev
-  secrets:
-    db:
-      name: "casty"
-      host: "localhost"
-      port: 27017
-      user: "root"
-      pass: ""
-    redis:
-      replicaset: false
-      masterName: mymaster
-      sentinels:
-      - "localhost:5000"
-      pass: a-very-complex-password-here
-      sentinel_pass: a-very-complex-password-here
-    oauth:
-      google: "/config/google_client_secret.json"
-      spotify: "/config/spotify_client_secret.json"
-      discord: "/config/discord_client_secret.json"
-    jwt:
-      expire_time: 60
-      refresh_token_valid_time: 7
-      access_token_secret: 
-      refresh_token_secret: 
-    object_storage:
-      endpoint: ""
-      region: ""
-      access_key: ""
-      secret_key: ""
-    sentry_dsn: 
-    hcaptcha_secret: 
+  db:
+    name: "casty"
+    host: "localhost"
+    port: 27017
+    user: "root"
+    pass: ""
+    auth_source: ""
 
-oauth:
-  spotify:
-    client_id: 
-    client_secret: 
-    redirect_uri: 
-  google:
-    client_id: 
-    client_secret: 
-    project_id: 
-    redirect_uri: 
-  discord:
-    client_id: 
-    client_secret: 
-    redirect_uri: 
-    
+  redis:
+    cluster: false
+    masterName: mymaster
+    sentinels:
+    - "localhost:5000"
+    addr: "localhost:5000"
+    pass: a-very-complex-password-here
+    sentinel_pass: a-very-complex-password-here
+
+  jwt:
+    access_token:
+      expires_at:
+        type: "days"
+        value: 1
+      secret: ""
+    refresh_token:
+      expires_at:
+        type: "weeks"
+        value: 1
+      secret: ""
+
+  s3:
+    endpoint: ""
+    access_key: ""
+    secret_key: ""
+    use_http: false
+    insecure_skip_verify: false
+
+  sentry:
+    enabled: false
+    dsn: ""
+
+  recaptcha:
+    enabled: false
+    type: "hcaptcha"
+    secret: ""
+
+  oauth:
+    registration_by_oauth: false
+    spotify:
+      enabled: false
+      client_id: 
+      client_secret: 
+      redirect_uri: 
+    google:
+      enabled: false
+      client_id: 
+      client_secret: 
+      redirect_uri: 

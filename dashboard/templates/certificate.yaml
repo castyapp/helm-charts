@@ -2,7 +2,6 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  namespace: casty-dash
   name: casty-dashboard-lets-encrypt
   labels:
     app: dash

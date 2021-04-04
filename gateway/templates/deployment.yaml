@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: casty-gateway
   name: gateway
   labels:
     app: gateway
@@ -31,9 +30,7 @@ spec:
           "--tg-port",
           "3002",
           "--config-file",
-          "{{ .Values.configDirectory }}/config.yaml",
-          "--env",
-          "{{ .Values.appConfig.app.env }}"
+          "/config/config.hcl",
         ]
         ports:
         - containerPort: 3001
@@ -43,7 +40,7 @@ spec:
         {{- end }}
         volumeMounts:
           - name: config-volume
-            mountPath: {{ .Values.configDirectory }}
+            mountPath: /config
       {{- if .Values.tolerations }}
       tolerations: {{- toYaml .Values.tolerations | nindent 8 }}
       {{- end }}

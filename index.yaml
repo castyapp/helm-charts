@@ -2,8 +2,26 @@ apiVersion: v1
 entries:
   casty-api:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2021-04-04T04:41:37.600623+04:30"
+    description: A helm chart for the Casty api server
+    digest: e1b08713df921b0da01cbdd1f7f6b73c061ee08a4875f18cf83cab042535942a
+    home: https://github.com/castyapp/api.server
+    keywords:
+    - casty-api
+    maintainers:
+    - name: Alireza Josheghani
+      url: https://github.com/MrJoshLab
+    name: casty-api
+    sources:
+    - https://github.com/castyapp/api.server
+    type: application
+    urls:
+    - api/casty-api-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-03T02:57:19.33919+03:30"
+    created: "2021-04-04T04:41:37.599628+04:30"
     description: A helm chart for the Casty api server
     digest: 74b35dcda8b34f77d4f2bcad0301c695f69090b652645ddd8c6f6846f4b6d381
     home: https://github.com/CastyLab/api.service
@@ -21,8 +39,26 @@ entries:
     version: 0.0.1
   casty-cdn:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2021-04-04T04:41:37.601944+04:30"
+    description: A helm chart for the Casty CDN server
+    digest: c9cba31470f35d6d86180ada52fcee351942e418bb66a2bbdfb5df12ff1f2a7e
+    home: https://github.com/castyapp/cdn.service
+    keywords:
+    - casty-cdn
+    maintainers:
+    - name: Alireza Josheghani
+      url: https://github.com/MrJoshLab
+    name: casty-cdn
+    sources:
+    - https://github.com/castyapp/cdn.service
+    type: application
+    urls:
+    - cdn/casty-cdn-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-03T02:57:19.339818+03:30"
+    created: "2021-04-04T04:41:37.601243+04:30"
     description: A helm chart for the Casty CDN server
     digest: 7348e75173f36f7b88b37754dc28d531f05fa6edc0eb6580afd822ad45069373
     home: https://github.com/CastyLab/cdn.service
@@ -40,8 +76,26 @@ entries:
     version: 0.0.1
   casty-dash:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2021-04-04T04:41:37.603074+04:30"
+    description: A helm chart for the Casty dashboard
+    digest: 3a493b1181563cf6fde5157af4b0a8b9ac728f01791f41813972b32d4b59a97c
+    home: https://github.com/castyapp/dashboard
+    keywords:
+    - casty-dash
+    maintainers:
+    - name: Alireza Josheghani
+      url: https://github.com/MrJoshLab
+    name: casty-dash
+    sources:
+    - https://github.com/castyapp/dashboard
+    type: application
+    urls:
+    - dashboard/casty-dash-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-03T02:57:19.34035+03:30"
+    created: "2021-04-04T04:41:37.602476+04:30"
     description: A helm chart for the Casty dashboard
     digest: 197c9ceab0f6b49609e0175264096222522cb3a7a9107f637805dde4fedfcd15
     home: https://github.com/CastyLab/dashboard
@@ -59,8 +113,26 @@ entries:
     version: 0.0.1
   casty-gateway:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2021-04-04T04:41:37.604573+04:30"
+    description: A helm chart for the Casty gateway server
+    digest: 3d5593e2b7ddcd5fe02b3685d95203ba37b2010fcce5dc882204ecf02f420ad6
+    home: https://github.com/castyapp/gateway.service
+    keywords:
+    - casty-gateway
+    maintainers:
+    - name: Alireza Josheghani
+      url: https://github.com/MrJoshLab
+    name: casty-gateway
+    sources:
+    - https://github.com/castyapp/gateway.service
+    type: application
+    urls:
+    - gateway/casty-gateway-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-03T02:57:19.341041+03:30"
+    created: "2021-04-04T04:41:37.603783+04:30"
     description: A helm chart for the Casty gateway server
     digest: 760f535c5bc871ca6b14e128d9a508797ac65270d64e09b16d6c3b1d7f27ed82
     home: https://github.com/CastyLab/gateway.service
@@ -78,8 +150,26 @@ entries:
     version: 0.0.1
   casty-grpc:
   - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2021-04-04T04:41:37.606328+04:30"
+    description: A helm chart for the Casty gRPC server
+    digest: 54045b3a5a4e6a1d806d7653b7f409f9346f1c351e3bdd1d484af48a6cbf8d9a
+    home: https://github.com/castyapp/grpc.server
+    keywords:
+    - casty-grpc
+    maintainers:
+    - name: Alireza Josheghani
+      url: https://github.com/MrJoshLab
+    name: casty-grpc
+    sources:
+    - https://github.com/castyapp/grpc.server
+    type: application
+    urls:
+    - grpc/casty-grpc-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
-    created: "2021-02-03T02:57:19.341758+03:30"
+    created: "2021-04-04T04:41:37.605458+04:30"
     description: A helm chart for the Casty gRPC server
     digest: 40078726757e5e6b05b2cbfa532620be6babe9621ff9a739315cacf7f321aa99
     home: https://github.com/CastyLab/grpc.service
@@ -95,4 +185,4 @@ entries:
     urls:
     - grpc/casty-grpc-0.0.1.tgz
     version: 0.0.1
-generated: "2021-02-03T02:57:19.337695+03:30"
+generated: "2021-04-04T04:41:37.598428+04:30"

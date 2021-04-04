@@ -1,8 +1,57 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  namespace: casty-api
   name: api-config
 data:
-  config.yml: |
-    {{- toYaml .Values.appConfig | nindent 12 }}
+  config.hcl: |
+  {{- with .Values.config }}
+
+    # Debug mode
+    debug = {{ .debug }}
+
+    # Metrics api enabled?
+    matrics = {{ .metrics }}
+
+    # Application environment
+    env = "{{ .env }}"
+
+    # setup timezone
+    timezone = "{{ .timezone }}"
+
+    # Configure grpc client
+    #
+    # You can find more information about how to run grpc server 
+    # is available here [https://github.com/castyapp/grpc.server#readme]
+    grpc {
+      host = "{{ .grpc.host }}"
+      port = {{ .grpc.port }}
+    }
+
+    http "rules" {
+      access_control_allow_origin = "{{ .http.access_control_allow_origin }}"
+    }
+
+    # S3 bucket config
+    s3 {
+      endpoint             = "{{ .s3.endpoint }}"
+      access_key           = "{{ .s3.access_key }}"
+      secret_key           = "{{ .s3.secret_key }}"
+      use_https            = {{ .s3.use_https }}
+      insecure_skip_verify = {{ .s3.insecure_skip_verify }}
+    }
+
+    # Sentry config
+    sentry {
+      enabled = {{ .sentry.enabled }}
+      dsn     = "{{ .sentry.dsn }}"
+    }
+
+    # Recaptcha config, it can be google or hcaptcha
+    recaptcha {
+      enabled = {{ .recaptcha.enabled }}
+      type    = "{{ .recaptcha.type }}"
+      secret  = "{{ .recaptcha.secret }}"
+    }
+
+  {{- end }}
+
